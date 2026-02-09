@@ -1,0 +1,150 @@
+[
+  {
+    "id": 1,
+    "type": "mcq",
+    "theme": "general",
+    "question": "¿Cuál de las siguientes opciones define mejor la ética?",
+    "options": [
+      "Un conjunto de reglas legales dictadas por el Estado.",
+      "Una reflexión filosófica sobre la moral y los valores que guían el comportamiento humano.",
+      "Un conjunto de modas sociales que cambian con el tiempo.",
+      "Un manual de instrucciones para usar tecnología."
+    ],
+    "correct": 1,
+    "feedback": "La ética es una rama de la filosofía que estudia la moral: reflexiona sobre qué es lo correcto, lo justo y lo bueno, y por qué. No se limita a leyes ni a opiniones pasajeras.",
+    "points": 3
+  },
+  {
+    "id": 2,
+    "type": "mcq",
+    "theme": "justice",
+    "question": "¿Qué problema ético puede causar un sistema de reconocimiento facial inexacto?",
+    "options": [
+      "Mejora de la privacidad de los ciudadanos.",
+      "Discriminación y detenciones erróneas de personas inocentes.",
+      "Reducción automática del sesgo en los datos.",
+      "Mayor autonomía para los usuarios del sistema."
+    ],
+    "correct": 1,
+    "feedback": "Los sistemas de reconocimiento facial con tasas de error desiguales pueden generar discriminación: personas de ciertos grupos étnicos pueden ser identificadas erróneamente, lo que lleva a detenciones injustas o vigilancia desproporcionada.",
+    "points": 3
+  },
+  {
+    "id": 3,
+    "type": "match",
+    "theme": "general",
+    "question": "Relaciona cada valor ético con su ejemplo práctico.",
+    "pairs": [
+      { "left": "Dignidad", "right": "Evitar que un algoritmo discrimine por género o etnia." },
+      { "left": "Autonomía", "right": "Permitir al usuario controlar qué datos comparte." },
+      { "left": "Transparencia", "right": "Explicar por qué el sistema tomó una decisión concreta." }
+    ],
+    "feedback": "Dignidad implica no discriminar; autonomía significa respetar la capacidad de decisión de cada persona; transparencia es hacer comprensible el funcionamiento del sistema.",
+    "points": 3
+  },
+  {
+    "id": 4,
+    "type": "mcq",
+    "theme": "transparency",
+    "question": "¿Qué significa \"explicabilidad\" en el contexto de la IA?",
+    "options": [
+      "Hacer que el código del programa sea más rápido.",
+      "La capacidad de entender y comunicar por qué el sistema tomó una decisión.",
+      "Reducir el uso de memoria del modelo de IA.",
+      "Hacer que la IA sea más creativa en sus respuestas."
+    ],
+    "correct": 1,
+    "feedback": "La explicabilidad (o \"interpretabilidad\") es la capacidad de un sistema de IA para que un ser humano pueda comprender las razones detrás de sus resultados o decisiones. Es fundamental en sectores como salud, justicia y finanzas.",
+    "points": 3
+  },
+  {
+    "id": 5,
+    "type": "mcq",
+    "theme": "general",
+    "question": "¿Cuál es un principio que promueven los marcos éticos internacionales para la IA?",
+    "options": [
+      "Ocultar los datos al usuario para proteger el negocio.",
+      "Promover la justicia y la no discriminación en los sistemas.",
+      "Incrementar las ganancias a toda costa.",
+      "Sustituir completamente la responsabilidad humana por la máquina."
+    ],
+    "correct": 1,
+    "feedback": "Organismos como la UNESCO y la Unión Europea coinciden en que la justicia, la equidad y la no discriminación son pilares fundamentales de cualquier sistema de IA confiable.",
+    "points": 3
+  },
+  {
+    "id": 6,
+    "type": "mcq",
+    "theme": "dignity",
+    "question": "¿Por qué es importante respetar la dignidad humana al diseñar sistemas de IA?",
+    "options": [
+      "Porque las leyes lo exigen en todos los países.",
+      "Porque toda persona merece ser tratada con respeto, sin ser reducida a un dato o una categoría.",
+      "Porque así el sistema funciona más rápido.",
+      "Porque los usuarios no quieren usar tecnología nueva."
+    ],
+    "correct": 1,
+    "feedback": "La dignidad humana es el fundamento de todos los derechos. Diseñar IA que respete la dignidad significa no tratar a las personas como meros objetos de análisis, sino reconocer su valor intrínseco.",
+    "points": 3
+  },
+  {
+    "id": 7,
+    "type": "mcq",
+    "theme": "privacy",
+    "question": "¿Cuál de las siguientes prácticas protege mejor la privacidad en un sistema de IA?",
+    "options": [
+      "Recopilar la mayor cantidad de datos posible \"por si acaso\".",
+      "Recoger solo los datos estrictamente necesarios y anonimizarlos.",
+      "Compartir los datos con terceros sin avisar al usuario.",
+      "Almacenar los datos sin fecha de caducidad ni revisión."
+    ],
+    "correct": 1,
+    "feedback": "El principio de \"minimización de datos\" establece que solo se deben recoger los datos necesarios para el fin específico, y la anonimización reduce el riesgo de que la información se vincule a una persona concreta.",
+    "points": 3
+  },
+  {
+    "id": 8,
+    "type": "mcq",
+    "theme": "autonomy",
+    "question": "¿Qué es el \"diseño persuasivo oscuro\" (dark pattern) en relación con la autonomía del usuario?",
+    "options": [
+      "Un tipo de interfaz con colores oscuros para reducir fatiga visual.",
+      "Técnicas de diseño que manipulan al usuario para que tome decisiones que no tomaría libremente.",
+      "Un método para mejorar la accesibilidad web.",
+      "Una estrategia para acelerar la carga de páginas."
+    ],
+    "correct": 1,
+    "feedback": "Los dark patterns son trucos de diseño que engañan o presionan al usuario (botones confusos, suscripciones ocultas, etc.). Violan la autonomía porque impiden que la persona decida de forma libre e informada.",
+    "points": 3
+  },
+  {
+    "id": 9,
+    "type": "mcq",
+    "theme": "general",
+    "question": "¿Cuál es la diferencia principal entre ética y moral?",
+    "options": [
+      "Son exactamente lo mismo; no hay diferencia.",
+      "La moral son las normas y costumbres de una comunidad; la ética es la reflexión filosófica sobre esas normas.",
+      "La ética es solo para filósofos; la moral para personas normales.",
+      "La moral es universal; la ética cambia según el país."
+    ],
+    "correct": 1,
+    "feedback": "La moral es el conjunto de normas, valores y costumbres que una comunidad acepta como \"correcto\". La ética es la disciplina filosófica que reflexiona sobre la moral: la analiza, la cuestiona y busca principios fundamentados.",
+    "points": 3
+  },
+  {
+    "id": 10,
+    "type": "mcq",
+    "theme": "general",
+    "question": "Según los marcos éticos, ¿qué debería ocurrir cuando un sistema de IA comete un error grave?",
+    "options": [
+      "Nada, porque la IA es automática y no se puede controlar.",
+      "Se debe identificar a los responsables humanos, investigar la causa y corregir el sistema.",
+      "Se debe ocultar el error para no dañar la reputación de la empresa.",
+      "Se debe desactivar toda la IA en el mundo."
+    ],
+    "correct": 1,
+    "feedback": "La rendición de cuentas (accountability) exige que siempre haya personas identificables responsables de las decisiones del sistema. Ante un error grave, se debe investigar, informar a los afectados y corregir el fallo.",
+    "points": 3
+  }
+]

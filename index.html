@@ -1,0 +1,1792 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¿Qué es la Ética? — Presentación Interactiva sobre IA</title>
+    <meta
+      name="description"
+      content="Presentación interactiva sobre ética aplicada a la Inteligencia Artificial. Universidad EIA — Curso de Ética para Posgrado."
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: "base",
+        themeVariables: { fontSize: "14px" },
+        flowchart: { useMaxWidth: true, htmlLabels: true },
+      });
+    </script>
+  </head>
+  <body>
+    <!-- ============================================
+     SIDEBAR — flujo lineal, sin divisores
+     ============================================ -->
+    <nav
+      class="sidebar"
+      id="sidebar"
+      role="navigation"
+      aria-label="Menú principal"
+    >
+      <div class="sidebar-header">
+        <h2>Ética &amp; IA</h2>
+        <button
+          class="sidebar-close"
+          id="sidebarClose"
+          aria-label="Cerrar menú"
+        >
+          &times;
+        </button>
+      </div>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="#" data-tab="panel-hero" class="active"
+            ><span class="nav-icon">🏠</span> Inicio</a
+          >
+        </li>
+        <li>
+          <a href="#" data-tab="panel-fundamentos"
+            ><span class="nav-icon">📖</span> Fundamentos de ética</a
+          >
+        </li>
+        <li>
+          <a href="#" data-tab="panel-ia"
+            ><span class="nav-icon">🤖</span> IA y ética</a
+          >
+        </li>
+        <li>
+          <a href="#" data-tab="panel-casos"
+            ><span class="nav-icon">⚖️</span> Casos y ciclo de vida</a
+          >
+        </li>
+        <li>
+          <a href="#" data-tab="panel-herramientas"
+            ><span class="nav-icon">✅</span> Herramientas y formación</a
+          >
+        </li>
+        <li>
+          <a href="#" data-tab="panel-quiz"
+            ><span class="nav-icon">✏️</span> Cuestionario</a
+          >
+        </li>
+        <li>
+          <a href="#" data-tab="panel-biblio"
+            ><span class="nav-icon">📚</span> Bibliografía y créditos</a
+          >
+        </li>
+      </ul>
+      <div class="font-controls" aria-label="Tamaño de letra">
+        <button class="font-btn" data-size="font-sm" title="Letra pequeña">
+          A−
+        </button>
+        <button class="font-btn" data-size="font-md" title="Letra mediana">
+          A
+        </button>
+        <button class="font-btn" data-size="font-lg" title="Letra grande">
+          A+
+        </button>
+      </div>
+    </nav>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ============================================
+     MAIN
+     ============================================ -->
+    <div class="main-content">
+      <header class="topbar">
+        <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">
+          &#9776;
+        </button>
+        <span class="topbar-title"
+          >Ética &amp; Inteligencia Artificial — Universidad EIA</span
+        >
+      </header>
+
+      <!-- ============================
+         PANEL: INICIO
+         ============================ -->
+      <div class="panel active" id="panel-hero">
+        <section class="hero" role="banner">
+          <div class="hero-inner">
+            <span class="hero-badge">Curso de Ética para Posgrado</span>
+            <h1>¿Qué es la Ética y para qué sirve en el contexto de la IA?</h1>
+            <p class="hero-sub">
+              Una guía clara y práctica para entender los principios éticos que
+              deben acompañar el diseño y uso de la Inteligencia Artificial.
+            </p>
+            <div class="hero-credits">
+              <strong>Universidad EIA</strong> · Curso de Ética para Posgrado ·
+              Febrero 2026<br />
+              Docente: Hernán Darío Gil Alzate &lt;hernan.gil@eia.edu.co&gt;<br />
+              Estudiante: Carlos Andrés Tejada Ramírez
+              &lt;carlos.tejada@eia.edu.co&gt;
+            </div>
+            <div class="hero-objectives">
+              <h3>Objetivos de aprendizaje</h3>
+              <ol>
+                <li>
+                  Definir qué es la ética y por qué importa para la convivencia.
+                </li>
+                <li>
+                  Explicar cómo la ética se aplica a la Inteligencia Artificial.
+                </li>
+                <li>
+                  Identificar problemas reales: sesgo, privacidad, autonomía,
+                  dignidad.
+                </li>
+                <li>
+                  Aplicar criterios simples para tomar decisiones responsables
+                  con IA.
+                </li>
+                <li>Explorar recursos multimedia y evaluar tu comprensión.</li>
+              </ol>
+            </div>
+            <button class="hero-start" id="heroStart">Comenzar →</button>
+          </div>
+        </section>
+      </div>
+
+      <!-- ============================
+         PANEL: FUNDAMENTOS DE ÉTICA
+         ============================ -->
+      <div class="panel" id="panel-fundamentos">
+        <div class="section-wrap">
+          <h2 class="section-title section-title-accent">
+            Fundamentos de la ética
+          </h2>
+          <p class="section-desc">
+            Conceptos esenciales antes de hablar de tecnología.
+          </p>
+
+          <!-- 01 -->
+          <div class="slide">
+            <div class="slide-number">01</div>
+            <h2>¿Qué es la ética?</h2>
+            <p>
+              La <strong>ética</strong> es la rama de la filosofía que estudia
+              la moral: reflexiona sobre qué es lo correcto, lo justo y lo
+              bueno, y por qué. La palabra proviene del griego
+              <em>ethos</em> (ἦθος), que significa «carácter» o «modo de ser».
+            </p>
+            <p>
+              No se trata de imponer reglas, sino de desarrollar criterios
+              fundamentados para tomar buenas decisiones en comunidad.
+            </p>
+            <div class="definition-box">
+              <div class="def-label">Definición sencilla</div>
+              <p>
+                La ética es la reflexión sobre cómo debemos actuar para vivir
+                bien juntos, respetando la dignidad de todas las personas.
+              </p>
+            </div>
+          </div>
+
+          <!-- 02 -->
+          <div class="slide">
+            <div class="slide-number">02</div>
+            <h2>Ética vs. Moral: ¿cuál es la diferencia?</h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Concepto</th>
+                    <th>Moral</th>
+                    <th>Ética</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>¿Qué es?</strong></td>
+                    <td>Normas, costumbres y valores de una comunidad.</td>
+                    <td>Reflexión filosófica sobre esas normas.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Origen</strong></td>
+                    <td>Cultura, religión, tradición.</td>
+                    <td>Razón, diálogo, argumentación.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>¿Cambia?</strong></td>
+                    <td>Varía entre culturas y épocas.</td>
+                    <td>Busca principios universales.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Ejemplo</strong></td>
+                    <td>«En mi familia no se miente.»</td>
+                    <td>«¿Por qué mentir daña la convivencia?»</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 03 + Diagrama -->
+          <div class="slide">
+            <div class="slide-number">03</div>
+            <h2>¿Para qué sirve la ética?</h2>
+            <ul>
+              <li>
+                <strong>Guía para decidir:</strong> ofrece criterios para elegir
+                cuando las opciones no son obvias.
+              </li>
+              <li>
+                <strong>Convivencia:</strong> permite que personas con ideas
+                distintas puedan vivir juntas.
+              </li>
+              <li>
+                <strong>Protección:</strong> defiende a los más vulnerables
+                frente a abusos de poder.
+              </li>
+              <li>
+                <strong>Confianza:</strong> genera el capital social necesario
+                para cooperar (en empresas, instituciones, tecnología).
+              </li>
+            </ul>
+            <p style="margin-top: 12px">
+              <em>Ejemplo cotidiano:</em> Cuando decides no copiar en un examen
+              aunque nadie te vigila, estás ejerciendo ética: actúas por
+              convicción, no por miedo a la sanción.
+            </p>
+
+            <div class="diagram-interactive">
+              <h3 style="margin-bottom: 4px">
+                La ética como puente entre lo subjetivo y lo objetivo
+              </h3>
+              <p
+                style="
+                  font-size: 0.88rem;
+                  color: var(--text-light);
+                  margin-bottom: 16px;
+                "
+              >
+                Este diagrama muestra cómo la ética articula ambas perspectivas
+                para producir resultados prácticos.
+              </p>
+              <div class="mermaid-wrap">
+                <pre class="mermaid">
+flowchart LR
+  subgraph SUBJ [Rama subjetiva]
+    S[Subjetivo]
+    E["Yo (EGO)"]
+    Op[Opinión]
+    Dx[DOXA]
+    Re[Relato]
+    Rv[Relativismo]
+    S --> E --> Op --> Dx --> Re --> Rv
+  end
+  subgraph OBJ [Rama objetiva]
+    O[Objetivo]
+    N["Nosotros (Argumento)"]
+    Ac[Acuerdo]
+    Id[Identidad compartida]
+    Dt[Dato]
+    O --> N --> Ac --> Id --> Dt
+  end
+  Re -- "deliberación (razones públicas)" --> ET[Ética como práctica intersubjetiva]
+  Dt -- "evidencia (hechos compartidos)" --> ET
+  ET --> GP["Guías para la acción\n(normas, criterios, controles)"]
+  ET --> CF["Confianza y legitimidad\n(en decisiones y sistemas)"]
+  ET --> GO["Gobernanza de datos/IA\n(roles, procesos, documentación)"]
+  GP -. "estándares y umbrales" .-> Ac
+  GO -. "responsables y trazabilidad" .-> N
+  CF -. "cultura y alineamiento" .-> Id
+  classDef subj fill:#fde2e2,stroke:#c62828,color:#000
+  classDef obj  fill:#e0f2f1,stroke:#00695c,color:#000
+  classDef etica fill:#fff3e0,stroke:#ef6c00,color:#000
+  classDef out  fill:#ede7f6,stroke:#4527a0,color:#000
+  class S,E,Op,Dx,Re,Rv subj
+  class O,N,Ac,Id,Dt obj
+  class ET etica
+  class GP,CF,GO out
+</pre
+                >
+              </div>
+              <div class="diagram-reading">
+                <h4>Lectura rápida</h4>
+                <ul>
+                  <li>
+                    La <strong>subjetividad</strong> aporta relatos y valores;
+                    la <strong>objetividad</strong> aporta datos y acuerdos
+                    verificables.
+                  </li>
+                  <li>
+                    La <strong>ética</strong> articula ambos mediante
+                    deliberación con evidencia, produciendo guías, confianza y
+                    gobernanza.
+                  </li>
+                  <li>
+                    Estas salidas retroalimentan el lado objetivo (acuerdos,
+                    roles) y el sentido compartido (identidad/cultura), cerrando
+                    el <strong>ciclo práctico de decisión</strong>.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recursos integrados: Video + Artículo -->
+          <div class="resources-inline">
+            <h3>🎬 Profundiza: vídeo y lectura</h3>
+            <p class="resources-sub">
+              Material complementario sobre los fundamentos.
+            </p>
+            <div class="cards-grid">
+              <div class="video-card">
+                <div class="video-thumb">
+                  <a
+                    href="https://www.youtube.com/watch?v=HOY0CSVAA4w"
+                    target="_blank"
+                  >
+                    <img
+                      src="https://img.youtube.com/vi/HOY0CSVAA4w/maxresdefault.jpg"
+                      alt="Adela Cortina – ¿Para qué sirve la ética?"
+                      style="width: 100%; height: 100%; object-fit: cover"
+                    />
+                    <div class="play-btn">▶</div>
+                  </a>
+                  <span class="video-duration">61 min</span>
+                  <span class="video-level intermediate">Intermedio</span>
+                </div>
+                <div class="video-body">
+                  <h3>¿Para qué sirve la ética? – Adela Cortina</h3>
+                  <p>
+                    Versión completa de la conferencia de la filósofa Adela
+                    Cortina sobre la importancia de la ética en la vida
+                    cotidiana y profesional.
+                  </p>
+                  <div class="video-timestamps">
+                    <span class="timestamp-chip">0:00 Introducción</span>
+                    <span class="timestamp-chip">10:15 Fundamentos</span>
+                    <span class="timestamp-chip"
+                      >22:40 Aplicaciones prácticas</span
+                    >
+                    <span class="timestamp-chip">35:00 Conclusión</span>
+                  </div>
+                  <div class="video-actions">
+                    <button class="btn-ghost" onclick="openModal('modal-v1')">
+                      Reflexionar
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="article-card">
+                <span class="article-tag philosophy">Filosofía</span>
+                <h3>¿Qué es la Ética? — Adela Cortina</h3>
+                <p class="article-summary">
+                  En este texto, la filósofa Adela Cortina explica qué significa
+                  la ética, cómo se diferencia de la moral y por qué es
+                  fundamental en la vida cotidiana y en la reflexión filosófica.
+                </p>
+                <div class="article-meta">
+                  <strong>Autor:</strong> Adela Cortina<br />
+                  <strong>Origen:</strong> Publicación académica, Madrid,
+                  Editorial Trotta
+                </div>
+                <div class="article-why">
+                  <strong>Por qué leerlo</strong> Porque ofrece una definición
+                  clara y accesible de la ética, útil tanto para estudiantes
+                  como para profesionales que buscan fundamentos filosóficos
+                  sólidos.
+                </div>
+                <div class="article-footer">
+                  <a
+                    href="https://www.paginaspersonales.unam.mx/files/981/2013-02-06-183921_que_es_etica_A_Cortina.pdf"
+                    target="_blank"
+                  >
+                    <button class="btn-ghost">Abrir PDF</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /panel-fundamentos -->
+
+      <!-- ============================
+         PANEL: IA Y ÉTICA
+         ============================ -->
+      <div class="panel" id="panel-ia">
+        <div class="section-wrap">
+          <h2 class="section-title section-title-accent">
+            Ética en la Inteligencia Artificial
+          </h2>
+          <p class="section-desc">
+            De la teoría a la tecnología: por qué la IA necesita ética.
+          </p>
+
+          <!-- 04 -->
+          <div class="slide">
+            <div class="slide-number">04</div>
+            <h2>¿Qué es la Inteligencia Artificial?</h2>
+            <div class="definition-box">
+              <div class="def-label">Definición sencilla</div>
+              <p>
+                La IA son sistemas informáticos diseñados para realizar tareas
+                que normalmente requieren inteligencia humana: reconocer
+                imágenes, entender lenguaje, tomar decisiones o aprender de
+                datos.
+              </p>
+            </div>
+            <p>
+              <strong>Nota importante:</strong> esta presentación se enfoca
+              exclusivamente en la IA y sus implicaciones éticas.
+            </p>
+            <p>
+              La IA actual es <strong>IA estrecha</strong>: resuelve tareas
+              específicas (traducir, diagnosticar, recomendar). No tiene
+              conciencia ni voluntad propia.
+            </p>
+          </div>
+
+          <!-- 05 -->
+          <div class="slide">
+            <div class="slide-number">05</div>
+            <h2>¿Por qué importa la ética en la IA?</h2>
+            <p>
+              La IA toma decisiones que afectan a personas reales. Si esas
+              decisiones son injustas, opacas o sesgadas, causan daño real.
+            </p>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Riesgos</th>
+                    <th>Oportunidades</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Discriminación automatizada (sesgos).</td>
+                    <td>Diagnósticos médicos más precisos.</td>
+                  </tr>
+                  <tr>
+                    <td>Invasión de privacidad y vigilancia masiva.</td>
+                    <td>Educación personalizada y accesible.</td>
+                  </tr>
+                  <tr>
+                    <td>Manipulación de opiniones (burbujas de filtro).</td>
+                    <td>Detección temprana de desastres naturales.</td>
+                  </tr>
+                  <tr>
+                    <td>Opacidad en decisiones críticas (cajas negras).</td>
+                    <td>Acceso a servicios para comunidades remotas.</td>
+                  </tr>
+                  <tr>
+                    <td>Concentración de poder en pocas empresas.</td>
+                    <td>Investigación científica acelerada.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 06 — con panel de debate -->
+          <div class="slide">
+            <div class="slide-number">06</div>
+            <h2>Valores clave para la IA ética</h2>
+            <div class="values-grid">
+              <div class="value-chip">
+                <h4>🤝 Dignidad</h4>
+                <p>
+                  Toda persona merece respeto. La IA no debe reducir a nadie a
+                  un dato o una categoría.
+                </p>
+              </div>
+              <div class="value-chip">
+                <h4>🗽 Autonomía</h4>
+                <p>
+                  El usuario debe poder decidir libremente, sin manipulación
+                  algorítmica.
+                </p>
+              </div>
+              <div class="value-chip">
+                <h4>⚖️ Justicia</h4>
+                <p>
+                  Los sistemas deben tratar a todos de forma equitativa, sin
+                  discriminar.
+                </p>
+              </div>
+              <div class="value-chip">
+                <h4>🔒 Privacidad</h4>
+                <p>
+                  Solo recoger datos necesarios. Proteger la información
+                  personal.
+                </p>
+              </div>
+              <div class="value-chip">
+                <h4>🔍 Transparencia</h4>
+                <p>
+                  Las decisiones de la IA deben poder explicarse de forma
+                  comprensible.
+                </p>
+              </div>
+              <div class="value-chip">
+                <h4>🌱 Bien común</h4>
+                <p>
+                  La IA debe contribuir al bienestar social, no solo al
+                  beneficio económico.
+                </p>
+              </div>
+            </div>
+            <div class="reflection-panel">
+              <h4>💬 Para debatir</h4>
+              <ul>
+                <li>
+                  Si pudieras proteger <strong>solo un valor</strong> en un
+                  sistema de IA, ¿cuál elegirías y por qué? ¿Qué sacrificarías?
+                </li>
+              </ul>
+              <div class="action-box">
+                <strong>Dato inquietante</strong>
+                Un estudio de ProPublica (2016) mostró que el software COMPAS,
+                usado por tribunales de EE.UU. para predecir reincidencia,
+                clasificaba erróneamente a personas negras como «alto riesgo» al
+                doble de tasa que a personas blancas.
+              </div>
+            </div>
+          </div>
+
+          <!-- Recursos integrados -->
+          <div class="resources-inline">
+            <h3>🎬 Profundiza: vídeos</h3>
+            <p class="resources-sub">
+              Material sobre ética aplicada a la inteligencia artificial.
+            </p>
+            <div class="cards-grid">
+              <div class="video-card">
+                <div class="video-thumb">
+                  <a
+                    href="https://www.youtube.com/watch?v=sHVwwriaT6k"
+                    target="_blank"
+                  >
+                    <img
+                      src="https://img.youtube.com/vi/sHVwwriaT6k/maxresdefault.jpg"
+                      alt="Límites éticos para la inteligencia artificial — DW Documental"
+                      style="width: 100%; height: 100%; object-fit: cover"
+                    />
+                    <div class="play-btn">▶</div>
+                  </a>
+                  <span class="video-duration">42 min</span>
+                  <span class="video-level intermediate">Intermedio</span>
+                </div>
+                <div class="video-body">
+                  <h3>
+                    Límites éticos para la inteligencia artificial — DW
+                    Documental
+                  </h3>
+                  <p>
+                    Este documental explora los desafíos éticos de la IA:
+                    sesgos, privacidad, explicabilidad y el impacto en la
+                    sociedad. Plantea preguntas sobre qué nos hace humanos y
+                    cómo establecer estándares responsables.
+                  </p>
+                  <div class="video-timestamps">
+                    <span class="timestamp-chip">0:00 Introducción</span>
+                    <span class="timestamp-chip">12:45 Estándares éticos</span>
+                    <span class="timestamp-chip">25:30 Impacto social</span>
+                    <span class="timestamp-chip">35:00 Conclusión</span>
+                  </div>
+                  <div class="video-actions">
+                    <button class="btn-ghost" onclick="openModal('modal-v2')">
+                      Reflexionar
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="video-card">
+                <div class="video-thumb">
+                  <a
+                    href="https://www.youtube.com/watch?v=2qbTmlaKaZ8"
+                    target="_blank"
+                  >
+                    <img
+                      src="https://img.youtube.com/vi/2qbTmlaKaZ8/maxresdefault.jpg"
+                      alt="Un uso ético y responsable de la Inteligencia Artificial — TEDx"
+                      style="width: 100%; height: 100%; object-fit: cover"
+                    />
+                    <div class="play-btn">▶</div>
+                  </a>
+                  <span class="video-duration">15 min</span>
+                  <span class="video-level basic">Básico</span>
+                </div>
+                <div class="video-body">
+                  <h3>
+                    Un uso ético y responsable de la IA — Efraín Mendicuti |
+                    TEDx
+                  </h3>
+                  <p>
+                    Charla TEDx sobre cómo usar la inteligencia artificial de
+                    forma ética y responsable en el día a día, abordando retos
+                    concretos y proponiendo soluciones accesibles.
+                  </p>
+                  <div class="video-timestamps">
+                    <span class="timestamp-chip">0:00 Introducción</span>
+                    <span class="timestamp-chip">5:00 Retos éticos</span>
+                    <span class="timestamp-chip">10:00 Propuestas</span>
+                  </div>
+                  <div class="video-actions">
+                    <button class="btn-ghost" onclick="openModal('modal-v3')">
+                      Reflexionar
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="video-card">
+                <div class="video-thumb">
+                  <a
+                    href="https://www.youtube.com/watch?v=Wb69fGV_wEM"
+                    target="_blank"
+                  >
+                    <img
+                      src="https://img.youtube.com/vi/Wb69fGV_wEM/maxresdefault.jpg"
+                      alt="Adela Cortina analiza la ética en torno a las tecnologías y la IA — UNIR"
+                      style="width: 100%; height: 100%; object-fit: cover"
+                    />
+                    <div class="play-btn">▶</div>
+                  </a>
+                  <span class="video-duration">88 min</span>
+                  <span class="video-level intermediate">Intermedio</span>
+                </div>
+                <div class="video-body">
+                  <h3>
+                    Adela Cortina: ética en torno a las tecnologías y la IA —
+                    UNIR
+                  </h3>
+                  <p>
+                    el desarrollo tecnológico y la inteligencia artificial,
+                    poniendo a la persona en el centro de la reflexión.
+                  </p>
+                  <div class="video-timestamps">
+                    <span class="timestamp-chip">0:00 Contexto</span>
+                    <span class="timestamp-chip">23:00 Tecnología y ética</span>
+                    <span class="timestamp-chip">54:00 Conclusión</span>
+                  </div>
+                  <div class="video-actions">
+                    <button class="btn-ghost" onclick="openModal('modal-v4')">
+                      Reflexionar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /panel-ia -->
+
+      <!-- ============================
+         PANEL: CASOS Y CICLO DE VIDA
+         ============================ -->
+      <div class="panel" id="panel-casos">
+        <div class="section-wrap">
+          <h2 class="section-title section-title-accent">
+            Casos prácticos y ciclo de vida
+          </h2>
+          <p class="section-desc">
+            Dónde aparecen los problemas éticos y cómo se manifiestan en la
+            práctica.
+          </p>
+
+          <!-- 07 -->
+          <div class="slide">
+            <div class="slide-number">07</div>
+            <h2>Ciclo de vida de un sistema de IA</h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Etapa</th>
+                    <th>¿Qué pasa?</th>
+                    <th>Riesgo ético</th>
+                    <th>¿Qué hacer?</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Diseño</strong></td>
+                    <td>Se define el objetivo del sistema.</td>
+                    <td>Objetivo sesgado o dañino.</td>
+                    <td>Incluir perspectivas diversas.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Datos</strong></td>
+                    <td>Se recolectan datos de entrenamiento.</td>
+                    <td>Datos no representativos.</td>
+                    <td>Auditar diversidad del dataset.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Entrenamiento</strong></td>
+                    <td>El modelo aprende de los datos.</td>
+                    <td>Se amplifican sesgos históricos.</td>
+                    <td>Medir equidad entre grupos.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Despliegue</strong></td>
+                    <td>El sistema se usa con personas reales.</td>
+                    <td>Manipulación o falta de aviso.</td>
+                    <td>Transparencia: avisar que es IA.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Monitoreo</strong></td>
+                    <td>Se observa su rendimiento en el tiempo.</td>
+                    <td>Deriva de sesgo (<em>bias drift</em>).</td>
+                    <td>Auditorías periódicas.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Retiro</strong></td>
+                    <td>El sistema se desactiva.</td>
+                    <td>Los datos personales persisten.</td>
+                    <td>Borrado seguro garantizado.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 08 — Caso 1 -->
+          <div class="slide">
+            <div class="slide-number">08 — Caso práctico</div>
+            <h2>Caso 1: Contratación automática y sesgo de género</h2>
+            <div class="caso-card" style="box-shadow: none; padding: 0">
+              <div class="caso-grid">
+                <div>
+                  <strong>Situación</strong>
+                  <p>
+                    Una empresa usa IA para filtrar currículos. El sistema fue
+                    entrenado con datos históricos donde la mayoría de empleados
+                    eran hombres.
+                  </p>
+                </div>
+                <div>
+                  <strong>Problema</strong>
+                  <p>
+                    El algoritmo aprendió a penalizar currículos con palabras
+                    asociadas a mujeres (nombres, universidades femeninas).
+                  </p>
+                </div>
+              </div>
+              <div class="caso-leccion">
+                <strong>Valores en juego:</strong> Justicia, Dignidad.
+                <strong>Solución:</strong> Auditar el dataset, medir resultados
+                por grupo y corregir antes de desplegar.
+              </div>
+            </div>
+            <div class="reflection-panel">
+              <h4>🔮 Situación hipotética</h4>
+              <ul>
+                <li>
+                  Imagina que eres el CTO de esta empresa. El sistema lleva 6
+                  meses en producción y un periódico acaba de publicar la
+                  historia. Tienes 24 horas antes de la conferencia de prensa.
+                  ¿Qué decisiones tomas y en qué orden?
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 09 — Caso 2 -->
+          <div class="slide">
+            <div class="slide-number">09 — Caso práctico</div>
+            <h2>Caso 2: Filtros de contenido y censura algorítmica</h2>
+            <div class="caso-card" style="box-shadow: none; padding: 0">
+              <div class="caso-grid">
+                <div>
+                  <strong>Situación</strong>
+                  <p>
+                    Una red social usa IA para moderar contenido. El sistema
+                    elimina publicaciones legítimas de activistas porque las
+                    interpreta como «discurso de odio».
+                  </p>
+                </div>
+                <div>
+                  <strong>Problema</strong>
+                  <p>
+                    El algoritmo no entiende contexto ni ironía, silenciando
+                    voces necesarias.
+                  </p>
+                </div>
+              </div>
+              <div class="caso-leccion">
+                <strong>Valores en juego:</strong> Autonomía, Transparencia.
+                <strong>Solución:</strong> Revisión humana de apelaciones,
+                explicar por qué se eliminó el contenido, mecanismos claros de
+                restitución.
+              </div>
+            </div>
+            <div class="reflection-panel">
+              <h4>⚡ Frase provocadora</h4>
+              <div class="action-box">
+                <strong>Para discutir</strong>
+                «La censura algorítmica es el precio inevitable de la moderación
+                a escala. Sin IA, el contenido tóxico gana. Con IA, algunos
+                inocentes pierden. Es un mal menor.» — ¿De acuerdo o en
+                desacuerdo? ¿Existe una tercera vía?
+              </div>
+            </div>
+          </div>
+
+          <!-- 10 — Caso 3 -->
+          <div class="slide">
+            <div class="slide-number">10 — Caso práctico</div>
+            <h2>Caso 3: Recomendaciones médicas y la «caja negra»</h2>
+            <div class="caso-card" style="box-shadow: none; padding: 0">
+              <div class="caso-grid">
+                <div>
+                  <strong>Situación</strong>
+                  <p>
+                    Un hospital usa IA para sugerir tratamientos. Los médicos
+                    confían en la recomendación, pero no entienden cómo llegó a
+                    esa conclusión.
+                  </p>
+                </div>
+                <div>
+                  <strong>Problema</strong>
+                  <p>
+                    Si la IA se equivoca, nadie puede explicar el error al
+                    paciente. La confianza se rompe.
+                  </p>
+                </div>
+              </div>
+              <div class="caso-leccion">
+                <strong>Valores en juego:</strong> Transparencia, Dignidad, Bien
+                común. <strong>Solución:</strong> Usar modelos explicables,
+                mantener al profesional como decisor final, informar al
+                paciente.
+              </div>
+            </div>
+            <div class="reflection-panel">
+              <h4>🎭 Dilema abierto</h4>
+              <ul>
+                <li>
+                  Un paciente rechaza el tratamiento que la IA recomienda con
+                  alta confianza. El médico cree que la IA tiene razón. ¿Debería
+                  el hospital registrar esa «desobediencia» en el historial del
+                  paciente? ¿Podría una aseguradora usar esa información para
+                  negar cobertura?
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Recursos integrados -->
+          <div class="resources-inline">
+            <h3>🎬 Profundiza: vídeo y juego interactivo</h3>
+            <p class="resources-sub">
+              Un vídeo provocador y un juego de dilemas éticos con IA.
+            </p>
+            <div class="cards-grid">
+              <div class="video-card">
+                <div class="video-thumb">
+                  <a
+                    href="https://www.youtube.com/watch?v=krchwKhLxsw"
+                    target="_blank"
+                  >
+                    <img
+                      src="https://img.youtube.com/vi/krchwKhLxsw/maxresdefault.jpg"
+                      alt="Would AI Sacrifice Itself for Humans? — Ai Convo"
+                      style="width: 100%; height: 100%; object-fit: cover"
+                    />
+                    <div class="play-btn">▶</div>
+                  </a>
+                  <span class="video-duration">10 min</span>
+                  <span class="video-level intermediate">Intermedio</span>
+                </div>
+                <div class="video-body">
+                  <h3>Would AI Sacrifice Itself for Humans? — Ai Convo</h3>
+                  <p>
+                    Exploración fascinante sobre si una IA podría, o debería,
+                    sacrificarse por los humanos. Plantea preguntas profundas
+                    sobre autonomía, dignidad y los límites morales de las
+                    máquinas.
+                  </p>
+                  <div class="video-timestamps">
+                    <span class="timestamp-chip">0:00 El dilema</span>
+                    <span class="timestamp-chip">3:30 Argumentos</span>
+                    <span class="timestamp-chip">7:00 Reflexión final</span>
+                  </div>
+                  <div class="video-actions">
+                    <button class="btn-ghost" onclick="openModal('modal-v5')">
+                      Reflexionar
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="course-card">
+                <div
+                  class="course-header"
+                  style="background: linear-gradient(135deg, #4a148c, #7b1fa2)"
+                >
+                  <span class="course-badge"
+                    >🎮 Juego interactivo — 12 dilemas</span
+                  >
+                  <h3>The Moral Singularity</h3>
+                  <p>
+                    Juego de ética en IA con 12 escenarios diseñados para
+                    desafiar tu pensamiento crítico.
+                  </p>
+                </div>
+                <div class="course-body">
+                  <div class="lesson-item">
+                    <div class="lesson-num">🧠</div>
+                    <div class="lesson-info">
+                      <h4>¿Qué es?</h4>
+                      <p>
+                        Un juego interactivo que presenta dilemas éticos reales
+                        sobre IA: vigilancia, sesgos, privacidad, autonomía y
+                        más. Tú decides, el juego evalúa tu razonamiento.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="lesson-item">
+                    <div class="lesson-num">⚖️</div>
+                    <div class="lesson-info">
+                      <h4>¿Por qué jugarlo?</h4>
+                      <p>
+                        Desarrolla habilidades de pensamiento crítico sobre los
+                        retos éticos de la IA. Ideal para investigadores,
+                        diseñadores de políticas, y cualquier persona interesada
+                        en el futuro de la tecnología.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="lesson-item">
+                    <div class="lesson-num">🌐</div>
+                    <div class="lesson-info">
+                      <h4>Detalles</h4>
+                      <p>
+                        Gratuito, en inglés, accesible desde el navegador. 12
+                        escenarios con decisiones que revelan tus valores y
+                        sesgos.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="course-footer">
+                  <a href="https://themoralsingularity.org/" target="_blank">
+                    <button class="btn-primary">Jugar ahora</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dashboard: Worldwide AI Ethics -->
+          <div class="resources-inline">
+            <h3>📊 Dashboard: Worldwide AI Ethics</h3>
+            <p class="resources-sub">
+              Meta-análisis interactivo de más de 200 guías y recomendaciones
+              sobre gobernanza de IA publicadas en todo el mundo — por la
+              <em>AI&nbsp;Ethics&nbsp;&amp;&nbsp;Robotics Society</em>
+              (Corrêa&nbsp;et&nbsp;al., 2023).
+            </p>
+            <div class="dashboard-embed">
+              <iframe
+                src="https://nkluge-correa.github.io/worldwide_AI-ethics/dashboard.html"
+                title="Dashboard — Worldwide AI Ethics"
+                loading="lazy"
+                style="
+                  width: 100%;
+                  height: 680px;
+                  border: none;
+                  border-radius: var(--radius-lg, 1rem);
+                  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+                "
+                allow="fullscreen"
+              ></iframe>
+              <p
+                style="
+                  text-align: center;
+                  margin-top: 0.75rem;
+                  font-size: 0.85rem;
+                  opacity: 0.7;
+                "
+              >
+                Si el dashboard no carga,
+                <a
+                  href="https://nkluge-correa.github.io/worldwide_AI-ethics/dashboard.html"
+                  target="_blank"
+                  rel="noopener"
+                  >ábrelo en una pestaña nueva&nbsp;↗</a
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /panel-casos -->
+
+      <!-- ============================
+         PANEL: HERRAMIENTAS Y FORMACIÓN
+         ============================ -->
+      <div class="panel" id="panel-herramientas">
+        <div class="section-wrap">
+          <h2 class="section-title section-title-accent">
+            Herramientas y formación
+          </h2>
+          <p class="section-desc">
+            Del conocimiento a la práctica: checklist para equipos y
+            microcursos.
+          </p>
+
+          <!-- 11 -->
+          <div class="slide">
+            <div class="slide-number">11</div>
+            <h2>Checklist ético para equipos de IA</h2>
+            <ul class="check-list">
+              <li>
+                <span class="check-num">1</span> ¿Hemos identificado a todas las
+                personas afectadas por el sistema?
+              </li>
+              <li>
+                <span class="check-num">2</span> ¿Nuestros datos de
+                entrenamiento representan la diversidad real?
+              </li>
+              <li>
+                <span class="check-num">3</span> ¿El sistema puede explicar sus
+                decisiones en lenguaje sencillo?
+              </li>
+              <li>
+                <span class="check-num">4</span> ¿Existe un mecanismo para que
+                un humano anule o corrija la IA?
+              </li>
+              <li>
+                <span class="check-num">5</span> ¿Solo recopilamos los datos
+                estrictamente necesarios?
+              </li>
+              <li>
+                <span class="check-num">6</span> ¿Hemos probado el sistema con
+                distintos grupos para medir equidad?
+              </li>
+              <li>
+                <span class="check-num">7</span> ¿Hay un canal para que usuarios
+                afectados reporten problemas?
+              </li>
+              <li>
+                <span class="check-num">8</span> ¿Quién responde si algo sale
+                mal? (responsabilidad definida)
+              </li>
+            </ul>
+          </div>
+
+          <!-- Cursos reales recomendados -->
+          <div class="resources-inline">
+            <h3>🎓 Cursos y certificaciones recomendadas</h3>
+            <p class="resources-sub">
+              Formación profesional en ética y gobernanza de IA: desde cursos
+              introductorios gratuitos hasta certificaciones avanzadas.
+            </p>
+            <div class="cards-grid">
+              <!-- ★ NICCS / Tonex — CAEGP (la más importante) -->
+              <div class="course-card" style="border: 2px solid var(--accent)">
+                <div
+                  class="course-header"
+                  style="background: linear-gradient(135deg, #0a2540, #2daeff)"
+                >
+                  <span class="course-badge"
+                    >⭐ Avanzado — Certificación 2 días</span
+                  >
+                  <h3>
+                    Certified AI Ethics and Governance Professional (CAEGP)
+                  </h3>
+                  <p>
+                    NICCS / CISA &amp; Tonex — La certificación más completa en
+                    ética y gobernanza de IA.
+                  </p>
+                </div>
+                <div class="course-body">
+                  <div class="lesson-item">
+                    <div class="lesson-num">1</div>
+                    <div class="lesson-info">
+                      <h4>6 módulos especializados</h4>
+                      <p>
+                        Fundamentos de ética IA, marcos y frameworks, gestión de
+                        riesgos, estrategias de gobernanza, cumplimiento
+                        regulatorio y despliegue responsable.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="lesson-item">
+                    <div class="lesson-num">2</div>
+                    <div class="lesson-info">
+                      <h4>Proyecto capstone</h4>
+                      <p>
+                        Diseño de un framework completo para desarrollo y
+                        despliegue responsable de IA en tu organización.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="lesson-item">
+                    <div class="lesson-num">3</div>
+                    <div class="lesson-info">
+                      <h4>Examen de certificación</h4>
+                      <p>
+                        40 preguntas (MCQ + escenarios), 90 min. Alineado con
+                        ISO 42001, NIST AI RMF y EU AI Act.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="course-footer">
+                  <a
+                    href="https://niccs.cisa.gov/training/catalog/tonex/certified-ai-ethics-and-governance-professional-caegp"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn-primary"
+                    style="
+                      text-decoration: none;
+                      display: inline-block;
+                      text-align: center;
+                    "
+                    >Ver certificación CAEGP</a
+                  >
+                </div>
+              </div>
+
+              <!-- Google Cloud Skills -->
+              <div class="course-card">
+                <div
+                  class="course-header"
+                  style="background: linear-gradient(135deg, #1a73e8, #34a853)"
+                >
+                  <span class="course-badge"
+                    >Introductorio — ~2 h — Gratuito</span
+                  >
+                  <h3>
+                    Responsible AI: Applying AI Principles with Google Cloud
+                  </h3>
+                  <p>
+                    Google Cloud Skills — Operacionaliza la IA responsable con
+                    los principios de Google.
+                  </p>
+                </div>
+                <div class="course-body">
+                  <div class="lesson-item">
+                    <div class="lesson-num">1</div>
+                    <div class="lesson-info">
+                      <h4>17 lecciones en video</h4>
+                      <p>
+                        Desde la introducción a los principios de IA de Google
+                        hasta casos de estudio como el reconocimiento de
+                        celebridades.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="lesson-item">
+                    <div class="lesson-num">2</div>
+                    <div class="lesson-info">
+                      <h4>Gobernanza y proceso de revisión</h4>
+                      <p>
+                        Cómo Google implementa la gobernanza de IA, identifica
+                        problemas éticos y aplica mejores prácticas.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="lesson-item">
+                    <div class="lesson-num">3</div>
+                    <div class="lesson-info">
+                      <h4>Badge de finalización</h4>
+                      <p>
+                        Quiz evaluativo y badge certificado de Google Cloud
+                        Skills al completar el curso.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="course-footer">
+                  <a
+                    href="https://www.skills.google/course_templates/388"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn-primary"
+                    style="
+                      text-decoration: none;
+                      display: inline-block;
+                      text-align: center;
+                    "
+                    >Ir al curso de Google</a
+                  >
+                </div>
+              </div>
+
+              <!-- Amazon AWS — IA Responsable -->
+              <div class="course-card">
+                <div
+                  class="course-header"
+                  style="background: linear-gradient(135deg, #232f3e, #ff9900)"
+                >
+                  <span class="course-badge">Básico-Intermedio — Gratuito</span>
+                  <h3>IA Responsable en AWS</h3>
+                  <p>
+                    Amazon Web Services — De la teoría a la práctica con
+                    herramientas y servicios reales de AWS.
+                  </p>
+                </div>
+                <div class="course-body">
+                  <div class="lesson-item">
+                    <div class="lesson-num">1</div>
+                    <div class="lesson-info">
+                      <h4>8 dimensiones fundamentales</h4>
+                      <p>
+                        Equidad, explicabilidad, privacidad, seguridad, control,
+                        veracidad, gobernanza y transparencia.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="lesson-item">
+                    <div class="lesson-num">2</div>
+                    <div class="lesson-info">
+                      <h4>Cursos en AWS Skill Builder</h4>
+                      <p>
+                        Prácticas de IA responsable, seguridad y gobernanza de
+                        soluciones de IA — módulos gratuitos paso a paso.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="lesson-item">
+                    <div class="lesson-num">3</div>
+                    <div class="lesson-info">
+                      <h4>Herramientas aplicadas</h4>
+                      <p>
+                        Amazon Bedrock Guardrails, detección de sesgo,
+                        evaluación de modelos y mecanismos de intervención
+                        humana.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="course-footer">
+                  <a
+                    href="https://aws.amazon.com/es/ai/responsible-ai/"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn-primary"
+                    style="
+                      text-decoration: none;
+                      display: inline-block;
+                      text-align: center;
+                    "
+                    >Explorar IA Responsable en AWS</a
+                  >
+                </div>
+              </div>
+
+              <!-- Udemy — AI Ethics & Governance -->
+              <div class="course-card">
+                <div
+                  class="course-header"
+                  style="background: linear-gradient(135deg, #5624d0, #a435f0)"
+                >
+                  <span class="course-badge"
+                    >Intermedio — Tests de práctica</span
+                  >
+                  <h3>Certified AI Ethics &amp; Governance Professional</h3>
+                  <p>
+                    Udemy — Preparación para certificación con 60 preguntas de
+                    práctica en 3 niveles.
+                  </p>
+                </div>
+                <div class="course-body">
+                  <div class="lesson-item">
+                    <div class="lesson-num">1</div>
+                    <div class="lesson-info">
+                      <h4>Ética, equidad y transparencia</h4>
+                      <p>
+                        Principios fundamentales de IA ética: fairness,
+                        accountability, transparencia y mitigación de sesgos.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="lesson-item">
+                    <div class="lesson-num">2</div>
+                    <div class="lesson-info">
+                      <h4>Marcos de gobernanza</h4>
+                      <p>
+                        Desarrollo e implementación de frameworks de gobernanza.
+                        Cumplimiento del EU AI Act y regulaciones globales.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="lesson-item">
+                    <div class="lesson-num">3</div>
+                    <div class="lesson-info">
+                      <h4>3 exámenes de práctica</h4>
+                      <p>
+                        Niveles Easy, Medium y Hard — 60 preguntas totales para
+                        preparar la certificación CAEGP.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="course-footer">
+                  <a
+                    href="https://www.udemy.com/course/certified-ai-ethics-governance-professional-a/"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn-primary"
+                    style="
+                      text-decoration: none;
+                      display: inline-block;
+                      text-align: center;
+                    "
+                    >Ver curso en Udemy</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /panel-herramientas -->
+
+      <!-- ============================
+         PANEL: CUESTIONARIO
+         ============================ -->
+      <div class="panel" id="panel-quiz">
+        <div class="section-wrap">
+          <h2 class="section-title section-title-accent">Cuestionario</h2>
+          <p class="section-desc">
+            10 preguntas para evaluar tu comprensión. Tiempo recomendado: 10–15
+            minutos. Tus respuestas se guardan localmente.
+          </p>
+
+          <div class="quiz-progress">
+            <div class="progress-bar">
+              <div
+                class="progress-fill"
+                id="quizProgressFill"
+                style="width: 0%"
+              ></div>
+            </div>
+            <span class="progress-text" id="quizProgressText"
+              >0 / 10 respondidas</span
+            >
+          </div>
+
+          <div id="quizContainer"></div>
+
+          <div class="quiz-nav">
+            <button class="quiz-submit" onclick="submitQuiz()">
+              Enviar respuestas
+            </button>
+            <button class="quiz-reset" onclick="resetQuiz()">Reiniciar</button>
+          </div>
+
+          <div
+            class="quiz-results"
+            id="quizResults"
+            style="display: none; margin-top: 28px"
+          ></div>
+
+          <div style="text-align: center; margin-top: 20px">
+            <p style="font-size: 0.82rem; color: var(--text-muted)">
+              <strong>Escala:</strong> ≥80% = Comprensión sólida · 60–79% = Buen
+              entendimiento, revisar conceptos · &lt;60% = Recomendado Curso A
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- /panel-quiz -->
+
+      <!-- ============================
+         PANEL: BIBLIOGRAFÍA Y CRÉDITOS
+         ============================ -->
+      <div class="panel" id="panel-biblio">
+        <div class="section-wrap">
+          <h2 class="section-title section-title-accent">
+            Bibliografía y créditos
+          </h2>
+          <p class="section-desc">
+            Fuentes consultadas y datos de la presentación.
+          </p>
+
+          <div class="slide" style="margin-bottom: 24px">
+            <h2>Referencias principales</h2>
+            <ul style="list-style: disc; padding-left: 22px">
+              <li>
+                <strong>Adela Cortina</strong> — Introducción a la ética
+                aplicada y la importancia de la ética cívica.
+              </li>
+              <li>
+                <strong>UNESCO</strong> —
+                <em>Recommendation on the Ethics of Artificial Intelligence</em>
+                (2021).
+              </li>
+              <li>
+                <strong>European Commission</strong> —
+                <em>Ethics Guidelines for Trustworthy AI</em> (2019).
+              </li>
+              <li>
+                <strong>Universidad Iberoamericana</strong> —
+                <em>Ética en la Inteligencia Artificial</em>. Casos y
+                principios.
+              </li>
+              <li>
+                <strong>ProPublica</strong> — <em>Machine Bias</em> (2016).
+                Investigación sobre sesgo en el software COMPAS.
+              </li>
+              <li>
+                <strong>Corrêa, N. K. et al.</strong> —
+                <em>Worldwide AI Ethics: a review of 200 guidelines and recommendations for AI governance</em>.
+                <em>Patterns</em>, 4(10), 2023.
+                <br><a href="https://doi.org/10.1016/j.patter.2023.100857" target="_blank" rel="noopener" style="color:var(--accent);word-break:break-all">https://doi.org/10.1016/j.patter.2023.100857</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="slide" style="margin-bottom: 24px">
+            <h2>Videos</h2>
+            <ul style="list-style: disc; padding-left: 22px">
+              <li>
+                Cortina, A. (2019). <em>¿Para qué sirve la ética?</em> BBVA / El País.
+                <br><a href="https://www.youtube.com/watch?v=HOY0CSVAA4w" target="_blank" rel="noopener" style="color:var(--accent);word-break:break-all">https://www.youtube.com/watch?v=HOY0CSVAA4w</a>
+              </li>
+              <li>
+                DW Documental (2023). <em>Inteligencia artificial — ¿El fin de la humanidad?</em>
+                <br><a href="https://www.youtube.com/watch?v=sHVwwriaT6k" target="_blank" rel="noopener" style="color:var(--accent);word-break:break-all">https://www.youtube.com/watch?v=sHVwwriaT6k</a>
+              </li>
+              <li>
+                Mendicuti, E. (2021). <em>Un uso ético y responsable de la Inteligencia Artificial.</em> TEDxJardínZenea.
+                <br><a href="https://www.youtube.com/watch?v=2qbTmlaKaZ8" target="_blank" rel="noopener" style="color:var(--accent);word-break:break-all">https://www.youtube.com/watch?v=2qbTmlaKaZ8</a>
+              </li>
+              <li>
+                Cortina, A. (s.f.). <em>Adela Cortina analiza la ética en torno a las tecnologías y la inteligencia artificial.</em> UNIR.
+                <br><a href="https://www.youtube.com/watch?v=Wb69fGV_wEM" target="_blank" rel="noopener" style="color:var(--accent);word-break:break-all">https://www.youtube.com/watch?v=Wb69fGV_wEM</a>
+              </li>
+              <li>
+                Ai Convo (2024). <em>Would AI Sacrifice Itself for Humans?</em> YouTube.
+                <br><a href="https://www.youtube.com/watch?v=krchwKhLxsw" target="_blank" rel="noopener" style="color:var(--accent);word-break:break-all">https://www.youtube.com/watch?v=krchwKhLxsw</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="slide" style="margin-bottom: 24px">
+            <h2>Artículos y documentos</h2>
+            <ul style="list-style: disc; padding-left: 22px">
+              <li>
+                Cortina, A. (2013). <em>¿Qué es la ética?</em> UNAM — Páginas personales.
+                <br><a href="https://www.paginaspersonales.unam.mx/files/981/2013-02-06-183921_que_es_etica_A_Cortina.pdf" target="_blank" rel="noopener" style="color:var(--accent);word-break:break-all">https://www.paginaspersonales.unam.mx/files/981/2013-02-06-183921_que_es_etica_A_Cortina.pdf</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="slide" style="margin-bottom: 24px">
+            <h2>Cursos y certificaciones</h2>
+            <ul style="list-style: disc; padding-left: 22px">
+              <li>
+                NICCS / CISA &amp; Tonex. <em>Certified AI Ethics and Governance Professional (CAEGP).</em> Certificación profesional — 2 días.
+                <br><a href="https://niccs.cisa.gov/training/catalog/tonex/certified-ai-ethics-and-governance-professional-caegp" target="_blank" rel="noopener" style="color:var(--accent);word-break:break-all">https://niccs.cisa.gov/training/catalog/tonex/certified-ai-ethics-and-governance-professional-caegp</a>
+              </li>
+              <li>
+                Google Cloud Skills. <em>Responsible AI: Applying AI Principles with Google Cloud.</em> Curso introductorio gratuito.
+                <br><a href="https://www.skills.google/course_templates/388" target="_blank" rel="noopener" style="color:var(--accent);word-break:break-all">https://www.skills.google/course_templates/388</a>
+              </li>
+              <li>
+                Amazon Web Services. <em>IA Responsable en AWS.</em> Recursos, herramientas y cursos gratuitos.
+                <br><a href="https://aws.amazon.com/es/ai/responsible-ai/" target="_blank" rel="noopener" style="color:var(--accent);word-break:break-all">https://aws.amazon.com/es/ai/responsible-ai/</a>
+              </li>
+              <li>
+                Chaudhary, A. <em>Certified AI Ethics &amp; Governance Professional.</em> Udemy — Tests de práctica.
+                <br><a href="https://www.udemy.com/course/certified-ai-ethics-governance-professional-a/" target="_blank" rel="noopener" style="color:var(--accent);word-break:break-all">https://www.udemy.com/course/certified-ai-ethics-governance-professional-a/</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="slide" style="margin-bottom: 24px">
+            <h2>Recursos interactivos</h2>
+            <ul style="list-style: disc; padding-left: 22px">
+              <li>
+                <em>The Moral Singularity.</em> Juego interactivo de dilemas éticos en IA — 12 escenarios.
+                <br><a href="https://themoralsingularity.org/" target="_blank" rel="noopener" style="color:var(--accent);word-break:break-all">https://themoralsingularity.org/</a>
+              </li>
+              <li>
+                Corrêa, N. K. et al. (2023). <em>Worldwide AI Ethics — Dashboard.</em> AI Ethics &amp; Robotics Society. Explorador interactivo de más de 200 guías de gobernanza de IA.
+                <br><a href="https://nkluge-correa.github.io/worldwide_AI-ethics/dashboard.html" target="_blank" rel="noopener" style="color:var(--accent);word-break:break-all">https://nkluge-correa.github.io/worldwide_AI-ethics/dashboard.html</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="slide">
+            <h2>Créditos</h2>
+            <dl class="credits-grid">
+              <dt>Universidad</dt>
+              <dd>Universidad EIA</dd>
+              <dt>Materia</dt>
+              <dd>Curso de Ética para Posgrado</dd>
+              <dt>Docente</dt>
+              <dd>
+                Hernán Darío Gil Alzate —
+                <a href="mailto:hernan.gil@eia.edu.co">hernan.gil@eia.edu.co</a>
+              </dd>
+              <dt>Estudiante</dt>
+              <dd>
+                Carlos Andrés Tejada Ramírez —
+                <a href="mailto:carlos.tejada@eia.edu.co"
+                  >carlos.tejada@eia.edu.co</a
+                >
+              </dd>
+              <dt>Fecha</dt>
+              <dd>Febrero 2026</dd>
+            </dl>
+            <p
+              style="
+                margin-top: 20px;
+                color: var(--text-muted);
+                font-size: 0.85rem;
+              "
+            >
+              Presentación diseñada con fines educativos. No utilizar como
+              asesoría legal, técnica o filosófica definitiva. Consultar fuentes
+              primarias para investigación formal.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- /panel-biblio -->
+
+      <!-- PANEL NAV — Anterior / Siguiente -->
+      <nav class="panel-nav" aria-label="Navegación entre secciones">
+        <button class="nav-btn" id="navPrev" hidden>&#8592; Anterior</button>
+        <span class="nav-indicator" id="navIndicator"></span>
+        <button class="nav-btn" id="navNext">Siguiente &#8594;</button>
+      </nav>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <p>
+          &copy; 2026 — Universidad EIA · Curso de Ética para Posgrado · Carlos
+          Andrés Tejada Ramírez
+        </p>
+      </footer>
+    </div>
+    <!-- /main-content -->
+
+    <!-- ============================================
+     MODALS
+     ============================================ -->
+    <div class="modal-overlay" id="modal-v1">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('modal-v1')">
+          &times;
+        </button>
+        <h2>Reflexión: ¿Qué es la ética?</h2>
+        <p>
+          1. ¿La ética es solo para filósofos o puede aplicarse en la vida
+          diaria de cualquier persona?
+        </p>
+        <p>2. ¿Puedes dar un ejemplo donde la ética y la ley se contradigan?</p>
+        <p>3. ¿Es posible ser «buena persona» sin reflexionar éticamente?</p>
+      </div>
+    </div>
+    <div class="modal-overlay" id="modal-v2">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('modal-v2')">
+          &times;
+        </button>
+        <h2>Reflexión: Ética aplicada a la IA</h2>
+        <p>
+          1. ¿Qué es más peligroso: un sesgo que todos ven, o uno que nadie
+          nota? ¿Por qué?
+        </p>
+        <p>
+          2. ¿Las oportunidades de la IA justifican los riesgos? ¿Bajo qué
+          condiciones?
+        </p>
+      </div>
+    </div>
+    <div class="modal-overlay" id="modal-v3">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('modal-v3')">
+          &times;
+        </button>
+        <h2>Reflexión: Sesgos en reconocimiento facial</h2>
+        <p>
+          1. Si un sistema tiene un 95 % de precisión pero falla más con ciertas
+          etnias, ¿es aceptable usarlo?
+        </p>
+        <p>
+          2. ¿Quién debería decidir si se despliega un sistema así: los
+          ingenieros, el gobierno, o los ciudadanos?
+        </p>
+      </div>
+    </div>
+    <div class="modal-overlay" id="modal-v4">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('modal-v4')">
+          &times;
+        </button>
+        <h2>Reflexión: Transparencia y explicabilidad</h2>
+        <p>
+          1. ¿Debería un banco estar obligado a explicarte por qué te denegó un
+          crédito si usó IA?
+        </p>
+        <p>
+          2. ¿Es posible hacer que todos los sistemas de IA sean completamente
+          explicables?
+        </p>
+      </div>
+    </div>
+    <div class="modal-overlay" id="modal-v5">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('modal-v5')">
+          &times;
+        </button>
+        <h2>Reflexión: Autonomía y diseño persuasivo</h2>
+        <p>
+          1. ¿Alguna vez una aplicación te hizo hacer algo que no querías? ¿Cómo
+          lo logró?
+        </p>
+        <p>2. ¿Deberían prohibirse los «dark patterns» por ley?</p>
+      </div>
+    </div>
+    <div class="modal-overlay" id="modal-v6">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('modal-v6')">
+          &times;
+        </button>
+        <h2>Reflexión: IA para el bien común</h2>
+        <p>
+          1. ¿Cómo asegurar que la IA médica no esté disponible solo para quien
+          pueda pagarla?
+        </p>
+        <p>
+          2. ¿El impacto ambiental de entrenar modelos grandes contradice el uso
+          de IA para sostenibilidad?
+        </p>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-a1">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('modal-a1')">
+          &times;
+        </button>
+        <h2>Ética: rama de la filosofía que estudia la moral</h2>
+        <p>
+          La ética es la disciplina filosófica que se pregunta
+          <strong>cómo debemos vivir</strong>. Su etimología viene del griego
+          <em>ethos</em> (carácter). A diferencia de la moral —que es el
+          conjunto concreto de normas de una comunidad—, la ética las examina
+          críticamente.
+        </p>
+        <p><strong>Conceptos fundamentales:</strong></p>
+        <ul style="list-style: disc; padding-left: 20px; margin: 10px 0">
+          <li>
+            <strong>Valores:</strong> cualidades que guían la acción
+            (honestidad, justicia, respeto).
+          </li>
+          <li>
+            <strong>Moral:</strong> normas aceptadas por un grupo social
+            concreto.
+          </li>
+          <li>
+            <strong>Bien y mal:</strong> categorías que la ética analiza, no
+            asume dogmáticamente.
+          </li>
+        </ul>
+        <p>
+          <strong>Ejemplo:</strong> Una familia decide que todos deben ser
+          honestos. La moral dice «no mentir». La ética pregunta: ¿por qué la
+          honestidad importa? ¿Hay situaciones donde mentir podría ser ético
+          (proteger a alguien)?
+        </p>
+      </div>
+    </div>
+    <div class="modal-overlay" id="modal-a2">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('modal-a2')">
+          &times;
+        </button>
+        <h2>Ética en la IA: conceptos clave</h2>
+        <p>
+          Seis valores fundamentales aplicados a la Inteligencia Artificial:
+        </p>
+        <ul style="list-style: disc; padding-left: 20px; margin: 10px 0">
+          <li>
+            <strong>Dignidad:</strong> toda persona tiene valor intrínseco. La
+            IA no debe reducir a nadie a un perfil o una categoría.
+          </li>
+          <li>
+            <strong>Autonomía:</strong> el usuario debe poder decidir
+            libremente. Ejemplo: permitir desactivar recomendaciones
+            algorítmicas.
+          </li>
+          <li>
+            <strong>Justicia:</strong> trato equitativo. Ejemplo: auditar que un
+            modelo de crédito no discrimine por género o etnia.
+          </li>
+          <li>
+            <strong>Privacidad:</strong> recoger solo lo necesario. Ejemplo: una
+            app de salud no necesita acceso a tus contactos.
+          </li>
+          <li>
+            <strong>Transparencia:</strong> explicar decisiones. Ejemplo: un
+            banco debe poder decir <em>por qué</em> denegó un préstamo.
+          </li>
+          <li>
+            <strong>Responsabilidad:</strong> alguien humano responde si falla.
+            Ejemplo: definir quién investiga si un vehículo autónomo causa un
+            accidente.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="modal-overlay" id="modal-a3">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('modal-a3')">
+          &times;
+        </button>
+        <h2>Dilemas éticos cotidianos con IA</h2>
+        <p>
+          <strong>Caso 1 — Contratación automática:</strong> Un algoritmo
+          entrenado con datos históricos descarta sistemáticamente a candidatas
+          mujeres. ¿Es culpa del dato, del diseñador, o de la empresa que lo
+          usa?
+        </p>
+        <p>
+          <strong>Caso 2 — Filtros de contenido:</strong> Una IA de moderación
+          elimina publicaciones legítimas de activistas al confundirlas con
+          discurso de odio. ¿Quién decide los límites?
+        </p>
+        <p>
+          <strong>Caso 3 — Recomendaciones médicas:</strong> Un sistema sugiere
+          un tratamiento, pero el médico no entiende cómo llegó a esa
+          conclusión. ¿Es ético seguir la recomendación a ciegas?
+        </p>
+        <p>
+          <strong>Para discusión:</strong> ¿En cuál de los tres casos el daño
+          potencial es mayor? ¿Por qué?
+        </p>
+      </div>
+    </div>
+    <div class="modal-overlay" id="modal-a4">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('modal-a4')">
+          &times;
+        </button>
+        <h2>Guías y marcos internacionales</h2>
+        <p>
+          <strong>UNESCO (2021):</strong> Primera recomendación global. Incluye:
+          proporcionalidad, seguridad, equidad, sostenibilidad, privacidad,
+          supervisión humana, transparencia, responsabilidad y gobernanza.
+        </p>
+        <p>
+          <strong>UE — Ethics Guidelines for Trustworthy AI:</strong> 7
+          requisitos: 1) Acción y supervisión humana, 2) Robustez técnica, 3)
+          Privacidad, 4) Transparencia, 5) Diversidad y equidad, 6) Bienestar
+          social, 7) Rendición de cuentas.
+        </p>
+        <p>
+          <strong>Por qué importan:</strong> Estos marcos están influyendo en
+          leyes concretas (como el AI Act europeo). Conocerlos es necesario para
+          cualquier profesional que diseñe o use sistemas de IA.
+        </p>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
